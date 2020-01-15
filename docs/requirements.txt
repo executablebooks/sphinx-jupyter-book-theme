@@ -1,0 +1,6 @@
+sphinx
+pandas
+recommonmark
+
+# Install ourselves
+.
