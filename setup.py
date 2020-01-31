@@ -26,6 +26,7 @@ setup(
         "sphinx",
         "recommonmark",
         "nbsphinx",
-        "ipython"
+        "ipython",
+        "ipywidgets"
     ],
 )
