@@ -3,6 +3,11 @@ Index for features
 ==================
 
 .. toctree::
-    :glob:
-
-    *
+    
+    features
+    markdown
+    notebooks
+    hiding
+    interact
+    executing
+    beta/index
