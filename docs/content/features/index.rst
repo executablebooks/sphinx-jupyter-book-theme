@@ -3,6 +3,7 @@ Index for features
 ==================
 
 .. toctree::
+    :hidden:
     
     features
     markdown
