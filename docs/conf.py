@@ -34,7 +34,8 @@ release = '0.0.1dev0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    "nbsphinx"
+    "nbsphinx",
+    "recommonmark"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
