@@ -25,6 +25,7 @@ setup(
     install_requires=[
         "sphinx",
         "recommonmark",
-        "nbsphinx"
+        "nbsphinx",
+        "ipython"
     ],
 )
