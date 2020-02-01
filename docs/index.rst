@@ -7,5 +7,5 @@ the sidebar looks.
 
 .. toctree::
 
-    content/features/index.rst
     content/test_pages/index.rst
+    content/test_pages_2/index.rst
