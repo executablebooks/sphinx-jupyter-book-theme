@@ -1,4 +1,12 @@
-
+<div class="branding">
+<a class="navbar-brand" href="{{ pathto('index') }}">
+{% if logo %}
+  <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="logo">
+{% else %}
+  {{ bconfig['title'] }}
+</a>
+{% endif %}
+</div>
 
 <form class="bd-search d-flex align-items-center" action="{{ pathto('search') }}" method="get">
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
@@ -11,26 +19,32 @@
 
   <ul class="nav bd-sidenav">
       {% for main_nav_item in nav %}
+      <!-- Main nav item -->
+      <li class="main-nav {% if main_nav_item.active%}active{% endif %}">
+          <a href="{{ main_nav_item.url }}">{{ main_nav_item.title }}</a>
+      </li>
+      <!-- Children underneath main nav item -->
       {% if main_nav_item.active %}
-        {% for nav_item in main_nav_item.children %}
-          {% if nav_item.children %}
-
-              <li class="{% if nav_item.active%}active{% endif %}">
-                  <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
-                  <ul>
-                  {% for nav_item in nav_item.children %}
-                      <li class="{% if nav_item.active%}active{% endif %}">
-                          <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
-                      </li>
-                  {% endfor %}
-                  </ul>
-              </li>
-          {% else %}
-              <li class="{% if nav_item.active%}active{% endif %}">
-                  <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
-              </li>
-          {% endif %}
-        {% endfor %}
+        <ul class="nav-children">
+          {% for nav_item in main_nav_item.children %}
+            {% if nav_item.children %}
+                <li class="{% if nav_item.active%}active{% endif %}">
+                    <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                    <ul class="nav-subchildren">
+                    {% for nav_item in nav_item.children %}
+                        <li class="{% if nav_item.active%}active{% endif %}">
+                            <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% else %}
+                <li class="{% if nav_item.active%}active{% endif %}">
+                    <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       {% endif %}
       {% endfor %}
     </ul>

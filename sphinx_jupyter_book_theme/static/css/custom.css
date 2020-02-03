@@ -50,8 +50,8 @@
     .bd-toc {
       position: -webkit-sticky;
       position: sticky;
-      top: 4rem;
-      height: calc(100vh - 4rem);
+      top: .5rem;
+      height: calc(100vh - .5rem);
       overflow-y: auto;
     }
   }
@@ -88,6 +88,15 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
+
+  @media (min-width: 992px) {
+    .bd-sidebar {
+      top: 0px;
+      left: 0px
+    }
+  }
+
+
   @media (min-width: 768px) {
     .bd-sidebar {
       border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -96,9 +105,8 @@
       .bd-sidebar {
         position: -webkit-sticky;
         position: sticky;
-        top: 5rem;
         z-index: 1000;
-        height: calc(100vh - 4rem);
+        height: calc(100vh);
       }
     }
   }
@@ -217,12 +225,6 @@
     height: 80px;
     margin: -80px 0 0;
 }
-
-/* add padding to body to avid overlap with navbar   */
-body {
-  padding-top: 80px
-}
-
 
 /* adjust toc font sizes to improve overview */
 .toc-h2 {
@@ -346,4 +348,14 @@ div.tocsection i {
 
 div.editthispage {
   padding-bottom: .6rem;
+}
+
+/* Topbar */
+.topbar {
+  height: 50px;
+  border-bottom: 1px solid black
+}
+
+.topbar button {
+  margin: 5px 5px;
 }

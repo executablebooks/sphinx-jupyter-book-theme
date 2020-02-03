@@ -9,3 +9,4 @@ the sidebar looks.
 
     content/features/index.rst
     content/test_pages/index.rst
+    content/test_pages_2/index.rst

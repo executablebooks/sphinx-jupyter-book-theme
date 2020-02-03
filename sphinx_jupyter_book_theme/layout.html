@@ -37,33 +37,42 @@
 {% block body_tag %}
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 {%- endblock %}
-{%- block content %}
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-      {%- include "docs-navbar.html" %}
-    </nav>
 
+{%- block content %}
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
-          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          <div id="left-sidebar" class="col-12 col-md-4 col-xl-3 bd-sidebar">
               {%- include "docs-sidebar.html" %}
           </div>
 
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-              {% if not (meta is not none and 'notoc' in meta) %}
-                {%- include "docs-toc.html" %}
-              {% endif %}
+          <!-- Column for topbar and main content -->
+          <div class="col">
+            <!-- Topbar -->
+            {% include "topbar.html" %}
+            <div class="row">
+                <!-- Right TOC -->
+                <div class="d-none col-xl-3 d-xl-block bd-toc">
+                        {% if not (meta is not none and 'notoc' in meta) %}
+                            {%- include "docs-toc.html" %}
+                        {% endif %}
+                </div>
+                <!-- Main content -->
+                <main class="col-12 col-md-9 py-md-3 pl-md-5 bd-content" role="main">
+                    <div>
+                        {% block body %} {% endblock %}
+                    </div>
+                    {% if theme_show_prev_next %}
+                    <div class='prev-next-bottom'>
+                        {{ prev_next(prev, next) }}
+                    </div>
+                    {% endif %}
+                    {%- include "footer.html" %}
+                </main>
             </div>
 
-          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-              <div>
-                {% block body %} {% endblock %}
-              </div>
-              {% if theme_show_prev_next %}
-              <div class='prev-next-bottom'>
-                {{ prev_next(prev, next) }}
-              </div>
-              {% endif %}
-          </main>
+
+          </div>
+
 
       </div>
     </div>
@@ -71,5 +80,4 @@
 {%- endblock %}
 
 {%- block footer %}
-{%- include "footer.html" %}
 {%- endblock %}
