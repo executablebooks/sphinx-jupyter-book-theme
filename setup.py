@@ -24,8 +24,10 @@ setup(
     entry_points={"sphinx.html_themes": ["sphinx_jupyter_book_theme = sphinx_jupyter_book_theme"]},
     install_requires=[
         "sphinx",
-        "recommonmark",
-        "nbsphinx",
+        (
+            "sphinx_notebook @ "
+            "https://github.com/ExecutableBookProject/sphinx_notebook/archive/master.zip"
+        ),
         "ipython",
         "ipywidgets"
     ],

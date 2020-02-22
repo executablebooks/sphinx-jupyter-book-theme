@@ -1,7 +1,7 @@
 ---
 test_yaml_frontmatter: true
 ---
-# Features
+# Testing Frontmatter
 
 This is a short demonstration textbook to show the general layout / style of textbooks built
 with Jupyter and Jekyll.
