@@ -34,7 +34,7 @@ release = '0.0.1dev0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    "sphinx_notebook",
+    "myst_nb",
     "myst_parser"
 ]
 
