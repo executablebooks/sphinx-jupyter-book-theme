@@ -25,8 +25,8 @@ setup(
     install_requires=[
         "sphinx",
         (
-            "sphinx_notebook @ "
-            "https://github.com/ExecutableBookProject/sphinx_notebook/archive/master.zip"
+            "myst-nb @ "
+            "https://github.com/ExecutableBookProject/MyST-NB/archive/master.zip"
         ),
         "ipython",
         "ipywidgets"
