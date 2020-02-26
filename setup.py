@@ -29,6 +29,7 @@ setup(
             "https://github.com/ExecutableBookProject/MyST-NB/archive/master.zip"
         ),
         "ipython",
-        "ipywidgets"
+        "ipywidgets",
+        "ruamel_yaml"
     ],
 )
