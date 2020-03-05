@@ -30,6 +30,9 @@ setup(
         ),
         "ipython",
         "ipywidgets",
-        "ruamel_yaml"
+        (
+            "pydata-bootstrap-sphinx-theme @ "
+            "https://github.com/pandas-dev/pydata-bootstrap-sphinx-theme/archive/master.zip"
+        ),
     ],
 )
